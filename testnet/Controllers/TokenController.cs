@@ -46,7 +46,8 @@ namespace testnet.Controllers
                     new Claim("FirstName", user.FirstName),
                     new Claim("LastName", user.LastName),
                     new Claim("UserName", user.Email),
-                    new Claim("Email", user.Email)
+                    new Claim("Email", user.Email),
+                    new Claim(ClaimTypes.Role, user.Role)
                    };
 
                     var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
